@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/styled_text.dart';
+import 'package:roll_dice_app/dice_roller.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAligment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.startColor, this.endColor, {super.key});
+
+  const GradientContainer.purple({super.key})
+    : startColor = Colors.deepPurple,
+      endColor = Colors.indigo;
 
   final Color startColor;
   final Color endColor;
@@ -20,7 +24,9 @@ class GradientContainer extends StatelessWidget {
           end: endAligment,
         ),
       ),
-      child: const Center(child: StyledText('Hello World')),
+      child: Center(
+        child: DiceRoller(),
+      ),
     );
   }
 }
